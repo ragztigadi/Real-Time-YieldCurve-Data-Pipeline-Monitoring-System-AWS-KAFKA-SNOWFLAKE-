@@ -11,3 +11,6 @@ __pycache__/
 # Ignore IDE files
 .vscode/
 .idea/
+
+config/config.conf
+
