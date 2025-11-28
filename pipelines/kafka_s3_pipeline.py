@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 
 import boto3
 from kafka import KafkaConsumer
@@ -42,10 +42,16 @@ def kafka_to_s3_bronze_pipeline(file_prefix: str):
     )
     s3 = session.client("s3")
 
-    run_date = datetime.utcnow().strftime("%Y-%m-%d")
-    now_str = datetime.utcnow().strftime("%Y%m%dT%H%M%S")
+    run_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    now_str = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
 
-    key = f"bronze/stock_quotes/date={run_date}/{file_prefix}_{now_str}.json"
+    key = (
+        f"real-time-yieldcurve-bronze/stock_quotes/"
+        f"date={run_date}/{file_prefix}_{now_str}.json"
+    )
+
+    print("DEBUG S3 bucket:", repr(S3_BRONZE_BUCKET))
+    print("DEBUG S3 key:", key)
 
     s3.put_object(
         Bucket=S3_BRONZE_BUCKET,
