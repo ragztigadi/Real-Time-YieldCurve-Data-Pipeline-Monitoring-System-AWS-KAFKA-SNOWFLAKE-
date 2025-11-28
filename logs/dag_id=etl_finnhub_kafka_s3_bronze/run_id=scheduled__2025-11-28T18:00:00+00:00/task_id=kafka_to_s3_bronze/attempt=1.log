@@ -1,0 +1,48 @@
+[2025-11-28T19:00:14.715+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-28T19:00:14.751+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_finnhub_kafka_s3_bronze.kafka_to_s3_bronze scheduled__2025-11-28T18:00:00+00:00 [queued]>
+[2025-11-28T19:00:14.759+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_finnhub_kafka_s3_bronze.kafka_to_s3_bronze scheduled__2025-11-28T18:00:00+00:00 [queued]>
+[2025-11-28T19:00:14.760+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-11-28T19:00:14.774+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): kafka_to_s3_bronze> on 2025-11-28 18:00:00+00:00
+[2025-11-28T19:00:14.782+0000] {standard_task_runner.py:64} INFO - Started process 112 to run task
+[2025-11-28T19:00:14.785+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_finnhub_kafka_s3_bronze', 'kafka_to_s3_bronze', 'scheduled__2025-11-28T18:00:00+00:00', '--job-id', '64', '--raw', '--subdir', 'DAGS_FOLDER/etl_finnhub_kafka_s3_bronze.py', '--cfg-path', '/tmp/tmprotdxwz1']
+[2025-11-28T19:00:14.790+0000] {standard_task_runner.py:91} INFO - Job 64: Subtask kafka_to_s3_bronze
+[2025-11-28T19:00:14.914+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_finnhub_kafka_s3_bronze.kafka_to_s3_bronze scheduled__2025-11-28T18:00:00+00:00 [running]> on host 0acc384fd120
+[2025-11-28T19:00:15.113+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='codewithRaghav' AIRFLOW_CTX_DAG_ID='etl_finnhub_kafka_s3_bronze' AIRFLOW_CTX_TASK_ID='kafka_to_s3_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-11-28T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-28T18:00:00+00:00'
+[2025-11-28T19:00:15.114+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-28T19:00:15.138+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.4', 9092)]>: connecting to kafka:9092 [('172.18.0.4', 9092) IPv4]
+[2025-11-28T19:00:15.145+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.18.0.4', 9092)]>: Broker version identified as 2.6
+[2025-11-28T19:00:15.145+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.4', 9092)]>: Connection complete.
+[2025-11-28T19:00:15.148+0000] {subscription_state.py:181} INFO - Updating subscribed topics to: ('stock-quotes',)
+[2025-11-28T19:00:15.152+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.4', 9092)]>: connecting to kafka:9092 [('172.18.0.4', 9092) IPv4]
+[2025-11-28T19:00:15.153+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.18.0.4', 9092)]>: Connection complete.
+[2025-11-28T19:00:15.154+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.4', 9092)]>: Closing connection. 
+[2025-11-28T19:00:15.259+0000] {cluster.py:403} INFO - Coordinator for group/***-batch-consumer is ('coordinator-1', 'kafka', 9092, None)
+[2025-11-28T19:00:15.261+0000] {base.py:835} INFO - Discovered coordinator coordinator-1 for group ***-batch-consumer
+[2025-11-28T19:00:15.262+0000] {base.py:895} INFO - Starting new heartbeat thread
+[2025-11-28T19:00:15.265+0000] {consumer.py:379} INFO - Revoking previously assigned partitions () for group ***-batch-consumer
+[2025-11-28T19:00:15.267+0000] {base.py:433} INFO - Failed to join group ***-batch-consumer: NodeNotReadyError: coordinator-1
+[2025-11-28T19:00:15.269+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.4', 9092)]>: connecting to kafka:9092 [('172.18.0.4', 9092) IPv4]
+[2025-11-28T19:00:15.271+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=kafka:9092 <connected> [IPv4 ('172.18.0.4', 9092)]>: Connection complete.
+[2025-11-28T19:00:15.373+0000] {base.py:546} INFO - (Re-)joining group ***-batch-consumer
+[2025-11-28T19:00:15.380+0000] {base.py:661} INFO - Received member id kafka-python-2.3.0-f6a71fd5-efe8-443b-9d5e-50261f8c4f74 for group ***-batch-consumer; will retry join-group
+[2025-11-28T19:00:15.382+0000] {base.py:433} INFO - Failed to join group ***-batch-consumer: [Error 79] MemberIdRequiredError
+[2025-11-28T19:00:15.384+0000] {base.py:546} INFO - (Re-)joining group ***-batch-consumer
+[2025-11-28T19:00:18.399+0000] {base.py:617} INFO - Successfully joined group ***-batch-consumer <Generation 5 (member_id: kafka-python-2.3.0-f6a71fd5-efe8-443b-9d5e-50261f8c4f74, protocol: range)>
+[2025-11-28T19:00:18.401+0000] {base.py:619} INFO - Elected group leader -- performing partition assignments using range
+[2025-11-28T19:00:18.422+0000] {subscription_state.py:254} INFO - Updated partition assignment: [('stock-quotes', 0)]
+[2025-11-28T19:00:18.424+0000] {consumer.py:260} INFO - Setting newly assigned partitions (('stock-quotes', 0),) for group ***-batch-consumer
+[2025-11-28T19:00:18.439+0000] {fetcher.py:418} INFO - Resetting offset for partition ('stock-quotes', 0) to offset 0.
+[2025-11-28T19:00:23.458+0000] {base.py:1130} INFO - Stopping heartbeat thread
+[2025-11-28T19:00:23.460+0000] {base.py:943} INFO - Leaving consumer group ***-batch-consumer (member kafka-python-2.3.0-f6a71fd5-efe8-443b-9d5e-50261f8c4f74).
+[2025-11-28T19:00:23.465+0000] {base.py:961} INFO - LeaveGroup request for group ***-batch-consumer returned successfully
+[2025-11-28T19:00:23.466+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.18.0.4', 9092)]>: Closing connection. 
+[2025-11-28T19:00:23.467+0000] {fetcher.py:789} INFO - Fetch to node 1 failed: Cancelled: <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.18.0.4', 9092)]>
+[2025-11-28T19:00:23.467+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=kafka:9092 <connected> [IPv4 ('172.18.0.4', 9092)]>: Closing connection. 
+[2025-11-28T19:00:23.695+0000] {logging_mixin.py:188} INFO - DEBUG S3 bucket: 'real-time-yieldcurve-s3'
+[2025-11-28T19:00:23.696+0000] {logging_mixin.py:188} INFO - DEBUG S3 key: real-time-yieldcurve-bronze/stock_quotes/date=2025-11-28/stock_quotes_20251128_20251128T190023.json
+[2025-11-28T19:00:24.047+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-11-28T19:00:24.048+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-28T19:00:24.070+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=etl_finnhub_kafka_s3_bronze, task_id=kafka_to_s3_bronze, run_id=scheduled__2025-11-28T18:00:00+00:00, execution_date=20251128T180000, start_date=20251128T190014, end_date=20251128T190024
+[2025-11-28T19:00:24.103+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-28T19:00:24.126+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-28T19:00:24.130+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
