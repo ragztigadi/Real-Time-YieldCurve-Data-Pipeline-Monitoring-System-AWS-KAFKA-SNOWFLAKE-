@@ -26,3 +26,1156 @@
 [2025-11-27T21:08:50.177+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
 [2025-11-27T21:08:50.186+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
 [2025-11-27T21:11:47.667+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-11-28T03:18:21.827+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-11-28T03:18:21.829+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-11-28T03:18:21.831+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-11-28T03:18:21.832+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T03:18:21.840+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-11-28T03:21:20.996+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-11-28T03:22:13.179+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-11-28T03:22:14.771+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-11-28T03:22:14.774+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-11-28T03:22:14.776+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T03:22:14.784+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-11-28T03:27:15.718+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T03:27:17.304+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-11-28T03:32:16.564+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T03:32:18.213+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-11-28T03:37:17.544+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T03:37:17.557+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-11-28T03:42:17.607+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T03:42:17.615+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-11-28T03:47:18.027+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T03:47:18.045+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-11-28T03:52:18.886+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T03:52:18.905+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-11-28T03:57:19.497+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T03:57:19.503+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-11-28T04:02:20.287+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T04:02:20.293+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-11-28T04:07:20.412+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T04:07:20.519+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T04:07:48.445+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  2.17s           2025-11-28T04:07:23
+================================================================================
+[2025-11-28T04:08:18.876+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.14s           2025-11-28T04:07:53
+================================================================================
+[2025-11-28T04:08:49.429+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.10s           2025-11-28T04:08:24
+================================================================================
+[2025-11-28T04:09:20.370+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.17s           2025-11-28T04:08:54
+================================================================================
+[2025-11-28T04:09:50.873+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.16s           2025-11-28T04:09:25
+================================================================================
+[2025-11-28T04:10:21.896+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.18s           2025-11-28T04:09:56
+================================================================================
+[2025-11-28T04:10:52.383+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.13s           2025-11-28T04:10:27
+================================================================================
+[2025-11-28T04:11:22.840+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.12s           2025-11-28T04:10:57
+================================================================================
+[2025-11-28T04:11:53.337+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.12s           2025-11-28T04:11:28
+================================================================================
+[2025-11-28T04:12:20.826+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T04:12:20.844+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T04:12:23.888+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.08s           2025-11-28T04:11:58
+================================================================================
+[2025-11-28T04:12:54.576+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.08s           2025-11-28T04:12:29
+================================================================================
+[2025-11-28T04:13:25.109+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.10s           2025-11-28T04:12:59
+================================================================================
+[2025-11-28T04:13:56.041+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.08s           2025-11-28T04:13:30
+================================================================================
+[2025-11-28T04:14:26.485+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.08s           2025-11-28T04:14:01
+================================================================================
+[2025-11-28T04:14:57.000+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.15s           2025-11-28T04:14:31
+================================================================================
+[2025-11-28T04:15:27.587+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.14s           2025-11-28T04:15:02
+================================================================================
+[2025-11-28T04:15:58.093+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.10s           2025-11-28T04:15:32
+================================================================================
+[2025-11-28T04:16:28.634+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.11s           2025-11-28T04:16:03
+================================================================================
+[2025-11-28T04:16:59.125+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.08s           2025-11-28T04:16:33
+================================================================================
+[2025-11-28T04:17:21.319+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T04:17:21.385+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T04:17:30.467+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.08s           2025-11-28T04:17:04
+================================================================================
+[2025-11-28T04:18:01.166+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.38s           2025-11-28T04:17:35
+================================================================================
+[2025-11-28T04:18:31.776+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.11s           2025-11-28T04:18:05
+================================================================================
+[2025-11-28T04:19:02.419+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.10s           2025-11-28T04:18:36
+================================================================================
+[2025-11-28T04:19:32.971+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.09s           2025-11-28T04:19:06
+================================================================================
+[2025-11-28T04:20:03.543+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.08s           2025-11-28T04:19:37
+================================================================================
+[2025-11-28T04:20:34.134+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.10s           2025-11-28T04:20:13
+================================================================================
+[2025-11-28T04:21:04.711+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.09s           2025-11-28T04:20:43
+================================================================================
+[2025-11-28T04:21:09.387+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-11-28T04:21:50.853+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-11-28T04:21:50.855+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-11-28T04:21:50.856+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-11-28T04:21:50.857+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T04:21:50.882+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T04:21:51.106+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     25  0.14s             0           0
+================================================================================
+[2025-11-28T04:22:21.697+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     26  0.01s             0           1  0.16s           2025-11-28T04:21:51
+================================================================================
+[2025-11-28T04:22:52.216+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     27  0.01s             0           1  0.13s           2025-11-28T04:22:21
+================================================================================
+[2025-11-28T04:23:23.081+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     28  0.01s             0           1  0.41s           2025-11-28T04:22:52
+================================================================================
+[2025-11-28T04:23:53.559+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     29  0.01s             0           1  0.12s           2025-11-28T04:23:23
+================================================================================
+[2025-11-28T04:24:24.153+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     30  0.01s             0           1  0.11s           2025-11-28T04:23:53
+================================================================================
+[2025-11-28T04:24:55.512+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.11s           2025-11-28T04:24:54
+================================================================================
+[2025-11-28T04:25:25.806+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.08s           2025-11-28T04:25:24
+================================================================================
+[2025-11-28T04:25:43.284+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-11-28T04:26:39.306+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-11-28T04:26:39.612+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-11-28T04:26:39.619+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-11-28T04:26:39.626+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T04:26:39.769+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T04:26:41.091+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     25  0.27s             0           0
+================================================================================
+[2025-11-28T04:27:11.887+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     26  0.02s             0           1  0.43s           2025-11-28T04:26:41
+================================================================================
+[2025-11-28T04:27:42.498+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     27  0.01s             0           1  0.32s           2025-11-28T04:27:12
+================================================================================
+[2025-11-28T04:28:13.209+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     28  0.01s             0           1  0.19s           2025-11-28T04:27:42
+================================================================================
+[2025-11-28T04:28:14.428+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-11-28T04:34:48.705+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-11-28T04:34:50.354+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-11-28T04:34:50.355+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-11-28T04:34:50.357+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T04:34:50.432+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T04:34:50.750+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     25  0.17s             0           0
+================================================================================
+[2025-11-28T04:35:21.518+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     26  0.01s             0           1  0.29s           2025-11-28T04:34:50
+================================================================================
+[2025-11-28T04:35:52.189+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     27  0.01s             0           1  0.32s           2025-11-28T04:35:21
+================================================================================
+[2025-11-28T04:36:22.960+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     28  0.00s             0           1  0.42s           2025-11-28T04:35:52
+================================================================================
+[2025-11-28T04:36:53.400+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     29  0.01s             0           1  0.16s           2025-11-28T04:36:23
+================================================================================
+[2025-11-28T04:37:24.329+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     30  0.01s             0           1  0.34s           2025-11-28T04:36:53
+================================================================================
+[2025-11-28T04:37:54.845+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     31  0.01s             0           1  0.20s           2025-11-28T04:37:24
+================================================================================
+[2025-11-28T04:38:25.495+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     32  0.00s             0           1  0.30s           2025-11-28T04:37:55
+================================================================================
+[2025-11-28T04:38:55.956+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     33  0.01s             0           1  0.10s           2025-11-28T04:38:25
+================================================================================
+[2025-11-28T04:39:27.072+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     38  0.00s             0           1  0.11s           2025-11-28T04:39:26
+================================================================================
+[2025-11-28T04:39:50.571+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T04:39:50.608+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T04:39:57.681+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.09s           2025-11-28T04:39:28
+================================================================================
+[2025-11-28T04:40:28.142+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.12s           2025-11-28T04:39:58
+================================================================================
+[2025-11-28T04:40:58.623+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.13s           2025-11-28T04:40:29
+================================================================================
+[2025-11-28T04:41:29.986+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     43  0.01s             0           1  0.11s           2025-11-28T04:40:59
+================================================================================
+[2025-11-28T04:41:59.987+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.09s           2025-11-28T04:41:30
+================================================================================
+[2025-11-28T04:42:30.474+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.09s           2025-11-28T04:42:01
+================================================================================
+[2025-11-28T04:43:01.421+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.11s           2025-11-28T04:42:31
+================================================================================
+[2025-11-28T04:43:32.739+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     47  0.00s             0           1  0.11s           2025-11-28T04:43:02
+================================================================================
+[2025-11-28T04:44:02.824+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.13s           2025-11-28T04:43:32
+================================================================================
+[2025-11-28T04:44:33.284+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.20s           2025-11-28T04:44:04
+================================================================================
+[2025-11-28T04:44:51.616+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T04:44:51.638+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T04:45:03.740+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.08s           2025-11-28T04:44:34
+================================================================================
+[2025-11-28T04:45:34.149+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.09s           2025-11-28T04:45:04
+================================================================================
+[2025-11-28T04:46:04.607+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.09s           2025-11-28T04:45:35
+================================================================================
+[2025-11-28T04:46:35.149+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.08s           2025-11-28T04:46:05
+================================================================================
+[2025-11-28T04:47:03.039+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-11-28T04:47:42.656+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-11-28T04:47:42.961+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-11-28T04:47:42.962+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-11-28T04:47:42.963+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T04:47:43.003+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T04:47:43.410+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     25  0.19s             0           0
+================================================================================
+[2025-11-28T04:48:14.266+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     26  0.02s             0           1  0.80s           2025-11-28T04:47:44
+================================================================================
+[2025-11-28T04:48:45.196+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     27  0.02s             0           1  0.20s           2025-11-28T04:48:14
+================================================================================
+[2025-11-28T04:49:16.132+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     28  0.00s             0           1  0.49s           2025-11-28T04:48:45
+================================================================================
+[2025-11-28T04:49:47.426+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.10s           2025-11-28T04:49:46
+================================================================================
+[2025-11-28T04:50:17.441+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     30  0.01s             0           1  0.10s           2025-11-28T04:49:46
+================================================================================
+[2025-11-28T04:50:48.377+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     31  0.01s             0           1  0.09s           2025-11-28T04:50:17
+================================================================================
+[2025-11-28T04:51:18.902+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     32  0.01s             0           1  0.10s           2025-11-28T04:50:48
+================================================================================
+[2025-11-28T04:51:49.452+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     33  0.01s             0           1  0.10s           2025-11-28T04:51:18
+================================================================================
+[2025-11-28T04:52:16.774+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-11-28T04:53:18.139+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-11-28T04:53:19.709+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-11-28T04:53:19.711+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-11-28T04:53:19.713+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T04:53:19.780+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T04:53:20.155+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     42  0.18s             0           0
+================================================================================
+[2025-11-28T04:53:51.797+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     43  0.01s             0           1  1.46s           2025-11-28T04:53:21
+================================================================================
+[2025-11-28T04:54:22.265+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  1.09s           2025-11-28T04:53:52
+================================================================================
+[2025-11-28T04:54:53.146+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.44s           2025-11-28T04:54:23
+================================================================================
+[2025-11-28T04:55:24.047+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.40s           2025-11-28T04:54:54
+================================================================================
+[2025-11-28T04:55:54.956+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.26s           2025-11-28T04:55:25
+================================================================================
+[2025-11-28T04:56:25.998+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.37s           2025-11-28T04:55:56
+================================================================================
+[2025-11-28T04:56:56.486+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.23s           2025-11-28T04:56:27
+================================================================================
+[2025-11-28T04:57:27.254+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.37s           2025-11-28T04:56:57
+================================================================================
+[2025-11-28T04:57:58.705+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.54s           2025-11-28T04:57:28
+================================================================================
+[2025-11-28T04:58:19.865+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T04:58:19.908+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T04:58:30.022+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     52  0.01s             0           1  0.33s           2025-11-28T04:57:59
+================================================================================
+[2025-11-28T04:59:00.401+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.97s           2025-11-28T04:58:30
+================================================================================
+[2025-11-28T04:59:31.562+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.41s           2025-11-28T04:59:01
+================================================================================
+[2025-11-28T05:00:02.619+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.31s           2025-11-28T04:59:32
+================================================================================
+[2025-11-28T05:00:33.640+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.23s           2025-11-28T05:00:03
+================================================================================
+[2025-11-28T05:01:04.299+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.70s           2025-11-28T05:00:35
+================================================================================
+[2025-11-28T05:01:35.252+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  1.32s           2025-11-28T05:01:07
+================================================================================
+[2025-11-28T05:02:06.737+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.23s           2025-11-28T05:01:38
+================================================================================
+[2025-11-28T05:02:29.771+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-11-28T05:03:30.393+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-11-28T05:03:31.969+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-11-28T05:03:31.975+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-11-28T05:03:31.992+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T05:03:32.201+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T05:03:32.731+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     42  0.27s             0           0
+================================================================================
+[2025-11-28T05:04:03.629+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  1.30s           2025-11-28T05:03:33
+================================================================================
+[2025-11-28T05:04:35.212+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.69s           2025-11-28T05:04:05
+================================================================================
+[2025-11-28T05:05:06.635+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     45  0.27s             0           1  0.31s           2025-11-28T05:04:36
+================================================================================
+[2025-11-28T05:05:38.195+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.48s           2025-11-28T05:05:37
+================================================================================
+[2025-11-28T05:06:09.626+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.92s           2025-11-28T05:06:09
+================================================================================
+[2025-11-28T05:06:40.262+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.26s           2025-11-28T05:06:39
+================================================================================
+[2025-11-28T05:07:11.970+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.30s           2025-11-28T05:07:10
+================================================================================
+[2025-11-28T05:07:43.417+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           0           1  0.25s           2025-11-28T05:07:40
+================================================================================
+[2025-11-28T05:08:51.796+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-11-28T05:08:53.368+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-11-28T05:08:53.370+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-11-28T05:08:53.371+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T05:08:53.517+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T05:08:54.019+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     41  0.13s             0           0
+================================================================================
+[2025-11-28T05:09:25.372+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  2.48s           2025-11-28T05:08:56
+================================================================================
+[2025-11-28T05:09:56.697+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.97s           2025-11-28T05:09:27
+================================================================================
+[2025-11-28T05:10:28.562+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  1.29s           2025-11-28T05:09:59
+================================================================================
+[2025-11-28T05:10:59.961+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.47s           2025-11-28T05:10:30
+================================================================================
+[2025-11-28T05:11:30.772+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.46s           2025-11-28T05:11:00
+================================================================================
+[2025-11-28T05:12:01.991+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     87  0.00s             1           0  0.41s           2025-11-28T05:11:31
+================================================================================
+[2025-11-28T05:12:33.942+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.38s           2025-11-28T05:12:33
+================================================================================
+[2025-11-28T05:13:05.227+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.34s           2025-11-28T05:13:03
+================================================================================
+[2025-11-28T05:13:36.461+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.43s           2025-11-28T05:13:34
+================================================================================
+[2025-11-28T05:13:53.621+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T05:13:53.670+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T05:14:08.063+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.74s           2025-11-28T05:14:06
+================================================================================
+[2025-11-28T05:14:39.676+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.42s           2025-11-28T05:14:36
+================================================================================
+[2025-11-28T05:15:11.290+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.40s           2025-11-28T05:15:07
+================================================================================
+[2025-11-28T05:15:41.301+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-11-28T05:16:42.456+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-11-28T05:16:44.010+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-11-28T05:16:44.014+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-11-28T05:16:44.016+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T05:16:44.066+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T05:16:44.493+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     43  0.25s             0           0
+================================================================================
+[2025-11-28T05:17:15.848+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  1.92s           2025-11-28T05:16:46
+================================================================================
+[2025-11-28T05:17:47.543+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     45  0.01s             1           0  0.87s           2025-11-28T05:17:17
+================================================================================
+[2025-11-28T05:18:18.240+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.80s           2025-11-28T05:17:48
+================================================================================
+[2025-11-28T05:18:50.016+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     47  0.01s             1           0  0.58s           2025-11-28T05:18:19
+================================================================================
+[2025-11-28T05:19:21.656+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.42s           2025-11-28T05:19:20
+================================================================================
+[2025-11-28T05:19:52.960+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.39s           2025-11-28T05:19:52
+================================================================================
+[2025-11-28T05:20:24.748+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.39s           2025-11-28T05:20:23
+================================================================================
+[2025-11-28T05:20:55.942+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.86s           2025-11-28T05:20:53
+================================================================================
+[2025-11-28T05:21:02.703+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-11-28T05:22:10.833+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-11-28T05:22:12.376+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-11-28T05:22:12.379+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-11-28T05:22:12.380+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T05:22:12.446+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T05:22:12.753+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     42  0.13s             0           0
+================================================================================
+[2025-11-28T05:22:44.188+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  1.72s           2025-11-28T05:22:14
+================================================================================
+[2025-11-28T05:23:16.525+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     44  0.00s             1           0  1.05s           2025-11-28T05:22:45
+================================================================================
+[2025-11-28T05:23:47.412+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  1.00s           2025-11-28T05:23:17
+================================================================================
+[2025-11-28T05:24:19.129+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py     46  0.00s             1           0  0.48s           2025-11-28T05:23:48
+================================================================================
+[2025-11-28T05:24:50.333+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.50s           2025-11-28T05:24:50
+================================================================================
+[2025-11-28T05:25:21.719+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.34s           2025-11-28T05:25:21
+================================================================================
+[2025-11-28T05:25:52.559+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.89s           2025-11-28T05:25:52
+================================================================================
+[2025-11-28T05:26:24.316+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.50s           2025-11-28T05:26:23
+================================================================================
+[2025-11-28T05:26:56.095+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.74s           2025-11-28T05:26:54
+================================================================================
+[2025-11-28T05:27:12.526+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-11-28T05:27:12.553+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-11-28T05:27:27.652+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py                           1           0  0.52s           2025-11-28T05:27:24
+================================================================================
+[2025-11-28T05:27:47.080+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
