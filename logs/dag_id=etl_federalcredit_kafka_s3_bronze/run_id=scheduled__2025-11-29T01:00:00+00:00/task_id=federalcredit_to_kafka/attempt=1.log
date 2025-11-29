@@ -1,0 +1,25 @@
+[2025-11-29T02:00:09.412+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-29T02:00:09.473+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_federalcredit_kafka_s3_bronze.federalcredit_to_kafka scheduled__2025-11-29T01:00:00+00:00 [queued]>
+[2025-11-29T02:00:09.481+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_federalcredit_kafka_s3_bronze.federalcredit_to_kafka scheduled__2025-11-29T01:00:00+00:00 [queued]>
+[2025-11-29T02:00:09.482+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-11-29T02:00:09.498+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): federalcredit_to_kafka> on 2025-11-29 01:00:00+00:00
+[2025-11-29T02:00:09.505+0000] {standard_task_runner.py:64} INFO - Started process 85 to run task
+[2025-11-29T02:00:09.508+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_federalcredit_kafka_s3_bronze', 'federalcredit_to_kafka', 'scheduled__2025-11-29T01:00:00+00:00', '--job-id', '79', '--raw', '--subdir', 'DAGS_FOLDER/etl_finnhub_kafka_s3_bronze.py', '--cfg-path', '/tmp/tmp8hq40ggz']
+[2025-11-29T02:00:09.510+0000] {standard_task_runner.py:91} INFO - Job 79: Subtask federalcredit_to_kafka
+[2025-11-29T02:00:09.593+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_federalcredit_kafka_s3_bronze.federalcredit_to_kafka scheduled__2025-11-29T01:00:00+00:00 [running]> on host cdd6ebe076b7
+[2025-11-29T02:00:09.758+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='codewithRaghav' AIRFLOW_CTX_DAG_ID='etl_federalcredit_kafka_s3_bronze' AIRFLOW_CTX_TASK_ID='federalcredit_to_kafka' AIRFLOW_CTX_EXECUTION_DATE='2025-11-29T01:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-29T01:00:00+00:00'
+[2025-11-29T02:00:09.760+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-29T02:00:10.080+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=host.docker.internal:29092 <connecting> [IPv4 ('192.168.65.254', 29092)]>: connecting to host.docker.internal:29092 [('192.168.65.254', 29092) IPv4]
+[2025-11-29T02:00:10.218+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=host.docker.internal:29092 <checking_api_versions_recv> [IPv4 ('192.168.65.254', 29092)]>: Broker version identified as 2.6
+[2025-11-29T02:00:10.225+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=host.docker.internal:29092 <connected> [IPv4 ('192.168.65.254', 29092)]>: Connection complete.
+[2025-11-29T02:00:11.120+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=host.docker.internal:29092 <connecting> [IPv4 ('192.168.65.254', 29092)]>: connecting to host.docker.internal:29092 [('192.168.65.254', 29092) IPv4]
+[2025-11-29T02:00:11.127+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=host.docker.internal:29092 <connected> [IPv4 ('192.168.65.254', 29092)]>: Connection complete.
+[2025-11-29T02:00:11.128+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=host.docker.internal:29092 <connected> [IPv4 ('192.168.65.254', 29092)]>: Closing connection. 
+[2025-11-29T02:00:11.205+0000] {kafka.py:633} INFO - <KafkaProducer client_id=kafka-python-producer-1 transactional_id=None>: Closing the Kafka producer with 9223372036.0 secs timeout.
+[2025-11-29T02:00:11.206+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=host.docker.internal:29092 <connected> [IPv4 ('192.168.65.254', 29092)]>: Closing connection. 
+[2025-11-29T02:00:11.208+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-11-29T02:00:11.209+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-29T02:00:11.312+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=etl_federalcredit_kafka_s3_bronze, task_id=federalcredit_to_kafka, run_id=scheduled__2025-11-29T01:00:00+00:00, execution_date=20251129T010000, start_date=20251129T020009, end_date=20251129T020011
+[2025-11-29T02:00:11.367+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-29T02:00:11.393+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-29T02:00:11.396+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

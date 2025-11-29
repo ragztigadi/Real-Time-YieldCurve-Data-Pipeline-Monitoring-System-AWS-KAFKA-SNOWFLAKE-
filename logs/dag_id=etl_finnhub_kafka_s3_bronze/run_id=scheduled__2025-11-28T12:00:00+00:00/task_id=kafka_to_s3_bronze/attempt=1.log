@@ -1,0 +1,71 @@
+[2025-11-28T13:33:15.140+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-28T13:33:15.187+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_finnhub_kafka_s3_bronze.kafka_to_s3_bronze scheduled__2025-11-28T12:00:00+00:00 [queued]>
+[2025-11-28T13:33:15.197+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_finnhub_kafka_s3_bronze.kafka_to_s3_bronze scheduled__2025-11-28T12:00:00+00:00 [queued]>
+[2025-11-28T13:33:15.198+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-11-28T13:33:15.211+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): kafka_to_s3_bronze> on 2025-11-28 12:00:00+00:00
+[2025-11-28T13:33:15.218+0000] {standard_task_runner.py:64} INFO - Started process 82 to run task
+[2025-11-28T13:33:15.221+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_finnhub_kafka_s3_bronze', 'kafka_to_s3_bronze', 'scheduled__2025-11-28T12:00:00+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/etl_finnhub_kafka_s3_bronze.py', '--cfg-path', '/tmp/tmpphwa743t']
+[2025-11-28T13:33:15.224+0000] {standard_task_runner.py:91} INFO - Job 52: Subtask kafka_to_s3_bronze
+[2025-11-28T13:33:15.344+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_finnhub_kafka_s3_bronze.kafka_to_s3_bronze scheduled__2025-11-28T12:00:00+00:00 [running]> on host 4e7055c767d1
+[2025-11-28T13:33:15.553+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='codewithRaghav' AIRFLOW_CTX_DAG_ID='etl_finnhub_kafka_s3_bronze' AIRFLOW_CTX_TASK_ID='kafka_to_s3_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-11-28T12:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-28T12:00:00+00:00'
+[2025-11-28T13:33:15.555+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-28T13:33:15.614+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.4', 9092)]>: connecting to kafka:9092 [('172.18.0.4', 9092) IPv4]
+[2025-11-28T13:33:15.627+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.18.0.4', 9092)]>: Broker version identified as 2.6
+[2025-11-28T13:33:15.628+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.4', 9092)]>: Connection complete.
+[2025-11-28T13:33:15.634+0000] {subscription_state.py:181} INFO - Updating subscribed topics to: ('stock-quotes',)
+[2025-11-28T13:33:15.643+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.4', 9092)]>: connecting to kafka:9092 [('172.18.0.4', 9092) IPv4]
+[2025-11-28T13:33:15.645+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.18.0.4', 9092)]>: Connection complete.
+[2025-11-28T13:33:15.646+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.4', 9092)]>: Closing connection. 
+[2025-11-28T13:33:15.751+0000] {cluster.py:403} INFO - Coordinator for group/***-batch-consumer is ('coordinator-1', 'kafka', 9092, None)
+[2025-11-28T13:33:15.752+0000] {base.py:835} INFO - Discovered coordinator coordinator-1 for group ***-batch-consumer
+[2025-11-28T13:33:15.753+0000] {base.py:895} INFO - Starting new heartbeat thread
+[2025-11-28T13:33:15.756+0000] {consumer.py:379} INFO - Revoking previously assigned partitions () for group ***-batch-consumer
+[2025-11-28T13:33:15.757+0000] {base.py:433} INFO - Failed to join group ***-batch-consumer: NodeNotReadyError: coordinator-1
+[2025-11-28T13:33:15.759+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.4', 9092)]>: connecting to kafka:9092 [('172.18.0.4', 9092) IPv4]
+[2025-11-28T13:33:15.760+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=kafka:9092 <connected> [IPv4 ('172.18.0.4', 9092)]>: Connection complete.
+[2025-11-28T13:33:15.862+0000] {base.py:546} INFO - (Re-)joining group ***-batch-consumer
+[2025-11-28T13:33:15.865+0000] {base.py:661} INFO - Received member id kafka-python-2.3.0-3756cdc2-74d5-4df2-88c6-e53cae0febdd for group ***-batch-consumer; will retry join-group
+[2025-11-28T13:33:15.866+0000] {base.py:433} INFO - Failed to join group ***-batch-consumer: [Error 79] MemberIdRequiredError
+[2025-11-28T13:33:15.867+0000] {base.py:546} INFO - (Re-)joining group ***-batch-consumer
+[2025-11-28T13:33:19.604+0000] {base.py:617} INFO - Successfully joined group ***-batch-consumer <Generation 3 (member_id: kafka-python-2.3.0-3756cdc2-74d5-4df2-88c6-e53cae0febdd, protocol: range)>
+[2025-11-28T13:33:19.608+0000] {base.py:619} INFO - Elected group leader -- performing partition assignments using range
+[2025-11-28T13:33:19.627+0000] {subscription_state.py:254} INFO - Updated partition assignment: [('stock-quotes', 0)]
+[2025-11-28T13:33:19.629+0000] {consumer.py:260} INFO - Setting newly assigned partitions (('stock-quotes', 0),) for group ***-batch-consumer
+[2025-11-28T13:33:19.638+0000] {fetcher.py:418} INFO - Resetting offset for partition ('stock-quotes', 0) to offset 0.
+[2025-11-28T13:33:24.645+0000] {base.py:1130} INFO - Stopping heartbeat thread
+[2025-11-28T13:33:24.648+0000] {base.py:943} INFO - Leaving consumer group ***-batch-consumer (member kafka-python-2.3.0-3756cdc2-74d5-4df2-88c6-e53cae0febdd).
+[2025-11-28T13:33:24.658+0000] {base.py:961} INFO - LeaveGroup request for group ***-batch-consumer returned successfully
+[2025-11-28T13:33:24.659+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.18.0.4', 9092)]>: Closing connection. 
+[2025-11-28T13:33:24.660+0000] {fetcher.py:789} INFO - Fetch to node 1 failed: Cancelled: <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.18.0.4', 9092)]>
+[2025-11-28T13:33:24.661+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=kafka:9092 <connected> [IPv4 ('172.18.0.4', 9092)]>: Closing connection. 
+[2025-11-28T13:33:24.967+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-28T13:33:24.969+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/pipelines/kafka_s3_pipeline.py", line 50, in kafka_to_s3_bronze_pipeline
+    s3.put_object(
+  File "/home/airflow/.local/lib/python3.12/site-packages/botocore/client.py", line 565, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/botocore/client.py", line 1021, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.NoSuchBucket: An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
+[2025-11-28T13:33:25.001+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=etl_finnhub_kafka_s3_bronze, task_id=kafka_to_s3_bronze, run_id=scheduled__2025-11-28T12:00:00+00:00, execution_date=20251128T120000, start_date=20251128T133315, end_date=20251128T133324
+[2025-11-28T13:33:25.025+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 52 for task kafka_to_s3_bronze (An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist; 82)
+[2025-11-28T13:33:25.089+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-11-28T13:33:25.133+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-28T13:33:25.136+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

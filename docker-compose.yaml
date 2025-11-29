@@ -1,4 +1,5 @@
 services:
+  # Zookeeper for Kafka coordination
   zookeeper:
     image: confluentinc/cp-zookeeper:7.4.1
     container_name: zookeeper
@@ -7,15 +8,18 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
     ports:
       - "2181:2181"
+    networks:
+      - pipeline_network
 
+  # Kafka broker
   kafka:
     image: confluentinc/cp-kafka:7.4.1
     container_name: kafka
     depends_on:
       - zookeeper
     ports:
-      - "9092:9092"   
-      - "29092:29092" 
+      - "9092:9092"
+      - "29092:29092"
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
@@ -26,36 +30,14 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_LOG_RETENTION_HOURS: 168  # 7 days
+      KAFKA_LOG_SEGMENT_BYTES: 1073741824  # 1GB
+    networks:
+      - pipeline_network
 
-  kafka-connect:
-    image: confluentinc/cp-kafka-connect:7.4.1
-    container_name: kafka-connect
-    depends_on:
-      - kafka
-    ports:
-      - "8083:8083"
-    environment:
-      CONNECT_BOOTSTRAP_SERVERS: "kafka:9092"
-      CONNECT_REST_PORT: 8083
-      CONNECT_REST_ADVERTISED_HOST_NAME: "kafka-connect"
-      CONNECT_GROUP_ID: "connect-cluster"
-      CONNECT_CONFIG_STORAGE_TOPIC: "connect-configs"
-      CONNECT_OFFSET_STORAGE_TOPIC: "connect-offsets"
-      CONNECT_STATUS_STORAGE_TOPIC: "connect-status"
-      CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: 1
-      CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: 1
-      CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 1
-      CONNECT_KEY_CONVERTER: "org.apache.kafka.connect.storage.StringConverter"
-      CONNECT_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
-      CONNECT_VALUE_CONVERTER_SCHEMAS_ENABLE: "false"
-      CONNECT_PLUGIN_PATH: "/usr/share/java"
-      # AWS creds
-      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
-      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
-      AWS_REGION: ${AWS_REGION}
-
+  # Kafka UI for monitoring
   kafdrop:
-    image: obsidiandynamics/kafdrop:latest
+    image: obsidiandynamics/kafdrop:3.3.0
     container_name: kafdrop
     depends_on:
       - kafka
@@ -63,60 +45,20 @@ services:
       - "9000:9000"
     environment:
       KAFKA_BROKERCONNECT: "kafka:9092"
+      JVM_OPTS: "-Xms32M -Xmx64M"
+      SERVER_SERVLET_CONTEXTPATH: "/"
+      SCHEMAREGISTRY_URL: ""
+      CMD_ARGS: "--message.format=STRING"
+    networks:
+      - pipeline_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
-  airflow-webserver:
-    image: apache/airflow:2.9.3
-    container_name: airflow-webserver
-    restart: always
-    depends_on:
-      - airflow-scheduler
-      - postgres
-    environment:
-      - AIRFLOW__CORE__LOAD_EXAMPLES=False
-      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
-      - KAFKA_BOOTSTRAP=${KAFKA_BOOTSTRAP}
-      - KAFKA_TOPIC=${KAFKA_TOPIC}
-      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-      - AWS_REGION=${AWS_REGION}
-      - S3_BRONZE_BUCKET=${S3_BRONZE_BUCKET}
-      - _PIP_ADDITIONAL_REQUIREMENTS=kafka-python boto3 requests
-    volumes:
-      - ./dags:/opt/airflow/dags
-      - ./logs:/opt/airflow/logs
-      - ./plugins:/opt/airflow/plugins
-      - ./pipelines:/opt/airflow/pipelines
-      - ./config:/opt/airflow/config
-      - ./utils:/opt/airflow/utils
-    ports:
-      - "8080:8080"
-    command: webserver
-
-  airflow-scheduler:
-    image: apache/airflow:2.9.3
-    container_name: airflow-scheduler
-    restart: always
-    depends_on:
-      - postgres
-    environment:
-      - AIRFLOW__CORE__LOAD_EXAMPLES=False
-      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
-      - KAFKA_BOOTSTRAP=${KAFKA_BOOTSTRAP}
-      - KAFKA_TOPIC=${KAFKA_TOPIC}
-      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-      - AWS_REGION=${AWS_REGION}
-      - S3_BRONZE_BUCKET=${S3_BRONZE_BUCKET}
-      - _PIP_ADDITIONAL_REQUIREMENTS=kafka-python boto3 requests
-    volumes:
-      - ./dags:/opt/airflow/dags
-      - ./logs:/opt/airflow/logs
-      - ./plugins:/opt/airflow/plugins
-      - ./pipelines:/opt/airflow/pipelines
-      - ./config:/opt/airflow/config
-      - ./utils:/opt/airflow/utils
-    command: scheduler
-
+  # PostgreSQL for Airflow metadata
   postgres:
     image: postgres:15
     container_name: airflow-postgres
@@ -129,6 +71,82 @@ services:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    networks:
+      - pipeline_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U airflow"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Airflow scheduler
+  airflow-scheduler:
+    image: apache/airflow:2.9.3
+    container_name: airflow-scheduler
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      - AIRFLOW__CORE__DAGS_FOLDER=/opt/airflow/dags
+      - AIRFLOW__CORE__PARALLELISM=4
+      - AIRFLOW__CORE__MAX_ACTIVE_RUNS_PER_DAG=1
+      - KAFKA_BOOTSTRAP=kafka:9092
+      - KAFKA_TOPIC=federal-credit-maturity-rates
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=us-east-1
+      - S3_BRONZE_BUCKET=real-time-yieldcurve-s3
+      - _PIP_ADDITIONAL_REQUIREMENTS=kafka-python boto3 requests
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./pipelines:/opt/airflow/pipelines
+      - ./config:/opt/airflow/config
+      - ./utils:/opt/airflow/utils
+    command: scheduler
+    networks:
+      - pipeline_network
+
+  # Airflow webserver
+  airflow-webserver:
+    image: apache/airflow:2.9.3
+    container_name: airflow-webserver
+    restart: always
+    depends_on:
+      - airflow-scheduler
+      - postgres
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      - AIRFLOW__CORE__DAGS_FOLDER=/opt/airflow/dags
+      - AIRFLOW__WEBSERVER__EXPOSE_CONFIG=True
+      - KAFKA_BOOTSTRAP=kafka:9092
+      - KAFKA_TOPIC=federal-credit-maturity-rates
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=us-east-1
+      - S3_BRONZE_BUCKET=real-time-yieldcurve-s3
+      - _PIP_ADDITIONAL_REQUIREMENTS=kafka-python boto3 requests
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./pipelines:/opt/airflow/pipelines
+      - ./config:/opt/airflow/config
+      - ./utils:/opt/airflow/utils
+    ports:
+      - "8080:8080"
+    command: webserver
+    networks:
+      - pipeline_network
+
+networks:
+  pipeline_network:
+    driver: bridge
 
 volumes:
   postgres_data:
