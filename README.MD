@@ -55,7 +55,7 @@ Splunk/Slack (Alerts & Monitoring)
 ## 🔄 Pipeline Walkthrough
 
 ### **Image 2: Airflow DAG - Bronze Layer**
-![Airflow Bronze DAG](docs/images/airflow-bronze-dag.png)
+![alt text](<01 dag success.png>)
 
 **What's Happening:**
 - DAG: `etl_federalcredit_kafka_s3_bronze`
@@ -67,7 +67,7 @@ Splunk/Slack (Alerts & Monitoring)
 ---
 
 ### **Image 3: Kafka Messages**
-![Kafka Messages](docs/images/kafka-messages.png)
+![alt text](<02 Kafka_Stream.png>)
 
 **Real-Time Streaming:**
 - Topic: `stock-quotes`
@@ -83,7 +83,7 @@ Splunk/Slack (Alerts & Monitoring)
 ---
 
 ### **Image 4: S3 Bucket Structure**
-![S3 Buckets](docs/images/s3-buckets.png)
+![alt text](<03 aws s3 medallion arch.png>)
 
 **Medallion Architecture:**
 ```
@@ -98,7 +98,7 @@ Three layers implement data maturity stages for progressive refinement.
 ---
 
 ### **Image 5: Bronze Layer - Date Partition**
-![Bronze Date Partition](docs/images/bronze-partition.png)
+![alt text](<04 data ingestion into bronz confirm.png>)
 
 **Bronze Storage:**
 - Path: `bronze/stock_quotes/date=2025-11-28/`
@@ -110,7 +110,7 @@ Three layers implement data maturity stages for progressive refinement.
 ---
 
 ### **Image 6: Bronze Data Sample**
-![Bronze JSON](docs/images/bronze-json.png)
+![alt text](<05 data ingestion success in s3.png>)
 
 **Raw Data Structure:**
 ```json
@@ -133,7 +133,7 @@ Unprocessed data preserving original API response for audit and replay.
 ---
 
 ### **Image 7: AWS Glue Crawler**
-![Glue Crawler](docs/images/glue-crawler.png)
+![alt text](<06 crawler added to bronze to silver.png>)
 
 **Schema Discovery:**
 - Crawler: `rt_yieldcurve_bronze_crawler`
@@ -146,7 +146,7 @@ Unprocessed data preserving original API response for audit and replay.
 ---
 
 ### **Image 8: AWS Glue ETL Job**
-![Glue ETL](docs/images/glue-etl.png)
+![alt text](<07 aws glue.png>)
 
 **Visual ETL Pipeline:**
 - Job: `AWS_Glue_Reddit_ETL`
@@ -163,7 +163,7 @@ Unprocessed data preserving original API response for audit and replay.
 ---
 
 ### **Image 9: Silver Layer - Parquet Files**
-![Silver Parquet](docs/images/silver-parquet.png)
+![alt text](<08 data transformatiom bronze to silver.png>)
 
 **Cleaned Data:**
 - Path: `silver/stock_quotes/`
@@ -176,7 +176,9 @@ Unprocessed data preserving original API response for audit and replay.
 ---
 
 ### **Image 10: Slack Alert Integration**
-![Slack Alerts](docs/images/slack-alerts.png)
+![alt text](<09 alert system messages.png>)
+
+![alt text](<alert system web hocks.png>)
 
 **Alert System:**
 - Channel: `#all-treasury-alerts`
@@ -191,7 +193,7 @@ Unprocessed data preserving original API response for audit and replay.
 ---
 
 ### **Image 11: Silver Layer - Multiple Files**
-![Silver Files](docs/images/silver-files-list.png)
+![alt text](<10 Bronze-silver-parquet confirm.png>)
 
 **Silver Storage Evolution:**
 - Multiple parquet files accumulating over time
@@ -203,7 +205,7 @@ Unprocessed data preserving original API response for audit and replay.
 ---
 
 ### **Image 12: Gold Layer - Symbol Partitions**
-![Gold Partitions](docs/images/gold-partitions.png)
+![alt text](<11 transformed data from silver to gold layer.png>)
 
 **Aggregated Data:**
 ```
@@ -223,7 +225,7 @@ gold/
 ---
 
 ### **Image 13: Snowflake External Stage**
-![Snowflake Stage](docs/images/snowflake-stage.png)
+![alt text](<12 Data Wearhouses successfully.png>)
 
 **Data Warehouse Integration:**
 - External Stage: `s3_treasury_stage`
