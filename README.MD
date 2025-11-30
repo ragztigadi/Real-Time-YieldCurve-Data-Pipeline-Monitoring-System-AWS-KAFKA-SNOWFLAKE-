@@ -15,7 +15,7 @@ An end-to-end real-time data pipeline that fetches live stock market data from F
 ## 🏛️ Architecture
 
 ### **Image 1: System Architecture**
-![Architecture](docs/images/architecture.png)
+![alt text](<001 Systen architecure YieldCurve.png>)
 
 **Architecture Components:**
 
