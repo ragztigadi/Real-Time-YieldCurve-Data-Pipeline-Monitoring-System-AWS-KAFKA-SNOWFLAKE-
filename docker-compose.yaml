@@ -1,5 +1,4 @@
 services:
-  # Zookeeper for Kafka coordination
   zookeeper:
     image: confluentinc/cp-zookeeper:7.4.1
     container_name: zookeeper
@@ -11,7 +10,6 @@ services:
     networks:
       - pipeline_network
 
-  # Kafka broker
   kafka:
     image: confluentinc/cp-kafka:7.4.1
     container_name: kafka
@@ -22,20 +20,21 @@ services:
       - "29092:29092"
     environment:
       KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,PLAINTEXT_HOST://0.0.0.0:29092
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://host.docker.internal:29092
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
+      # internal listener for other containers
+      KAFKA_LISTENERS: "PLAINTEXT://0.0.0.0:9092,PLAINTEXT_HOST://0.0.0.0:29092"
+      # what Kafka advertises
+      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://kafka:9092,PLAINTEXT_HOST://host.docker.internal:29092"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT"
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
-      KAFKA_LOG_RETENTION_HOURS: 168  # 7 days
-      KAFKA_LOG_SEGMENT_BYTES: 1073741824  # 1GB
+      KAFKA_LOG_RETENTION_HOURS: 168
+      KAFKA_LOG_SEGMENT_BYTES: 1073741824
     networks:
       - pipeline_network
 
-  # Kafka UI for monitoring
   kafdrop:
     image: obsidiandynamics/kafdrop:3.3.0
     container_name: kafdrop
@@ -44,9 +43,13 @@ services:
     ports:
       - "9000:9000"
     environment:
+      # talk to Kafka INSIDE the docker network
       KAFKA_BROKERCONNECT: "kafka:9092"
+      # IMPORTANT: point to the zookeeper *container*, not localhost
+      ZOOKEEPER_CONNECT: "zookeeper:2181"
       JVM_OPTS: "-Xms32M -Xmx64M"
-      SERVER_SERVLET_CONTEXTPATH: "/"
+      # note the corrected variable name here:
+      SERVER_SERVLET_CONTEXT_PATH: "/"
       SCHEMAREGISTRY_URL: ""
       CMD_ARGS: "--message.format=STRING"
     networks:
@@ -58,7 +61,6 @@ services:
       retries: 3
       start_period: 40s
 
-  # PostgreSQL for Airflow metadata
   postgres:
     image: postgres:15
     container_name: airflow-postgres
@@ -79,7 +81,6 @@ services:
       timeout: 5s
       retries: 5
 
-  # Airflow scheduler
   airflow-scheduler:
     image: apache/airflow:2.9.3
     container_name: airflow-scheduler
@@ -93,12 +94,19 @@ services:
       - AIRFLOW__CORE__DAGS_FOLDER=/opt/airflow/dags
       - AIRFLOW__CORE__PARALLELISM=4
       - AIRFLOW__CORE__MAX_ACTIVE_RUNS_PER_DAG=1
+
       - KAFKA_BOOTSTRAP=kafka:9092
       - KAFKA_TOPIC=federal-credit-maturity-rates
+
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_REGION=us-east-1
       - S3_BRONZE_BUCKET=real-time-yieldcurve-s3
+
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      - SNS_TOPIC_ARN=${SNS_TOPIC_ARN}
+
+      # install libs inside the Airflow image
       - _PIP_ADDITIONAL_REQUIREMENTS=kafka-python boto3 requests
     volumes:
       - ./dags:/opt/airflow/dags
@@ -111,7 +119,6 @@ services:
     networks:
       - pipeline_network
 
-  # Airflow webserver
   airflow-webserver:
     image: apache/airflow:2.9.3
     container_name: airflow-webserver
@@ -124,12 +131,18 @@ services:
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
       - AIRFLOW__CORE__DAGS_FOLDER=/opt/airflow/dags
       - AIRFLOW__WEBSERVER__EXPOSE_CONFIG=True
+
       - KAFKA_BOOTSTRAP=kafka:9092
       - KAFKA_TOPIC=federal-credit-maturity-rates
+
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_REGION=us-east-1
       - S3_BRONZE_BUCKET=real-time-yieldcurve-s3
+
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      - SNS_TOPIC_ARN=${SNS_TOPIC_ARN}
+
       - _PIP_ADDITIONAL_REQUIREMENTS=kafka-python boto3 requests
     volumes:
       - ./dags:/opt/airflow/dags

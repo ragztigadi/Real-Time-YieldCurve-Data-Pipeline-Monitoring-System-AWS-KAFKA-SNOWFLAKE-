@@ -13,7 +13,7 @@ from pipelines.kafka_s3_pipeline import kafka_to_s3_bronze_pipeline
 # DAG configuration
 default_args = {
     "owner": "data-engineering",
-    "start_date": datetime(2024, 1, 1),  # Past date for immediate scheduling
+    "start_date": datetime(2024, 1, 1),  
     "retries": 2,
     "retry_delay": timedelta(minutes=5),
     "email_on_failure": False,
@@ -25,13 +25,12 @@ dag = DAG(
     dag_id="etl_federalcredit_kafka_s3_bronze",
     default_args=default_args,
     description="Real-time Federal Credit Maturity Rates: Treasury API → Kafka → S3 Bronze",
-    schedule_interval="@hourly",  # Run every hour
+    schedule_interval="@hourly",  
     catchup=False,
     tags=["federalcredit", "treasury", "kafka", "s3", "bronze", "data-engineering"],
-    max_active_runs=1,  # Prevent concurrent runs
+    max_active_runs=1,  
 )
 
-# Generate unique file prefix for each run
 file_postfix = "{{ ds_nodash }}_{{ execution_date.strftime('%H%M%S') }}"
 
 # Task 1: Fetch Treasury API → Produce to Kafka

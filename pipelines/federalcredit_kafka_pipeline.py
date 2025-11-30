@@ -98,7 +98,7 @@ def federalcredit_to_kafka_pipeline():
 
         # Fetch records from API
         records = _fetch_all_records()
-        
+
         if not records:
             logger.warning("No records fetched from API")
             return
@@ -117,10 +117,10 @@ def federalcredit_to_kafka_pipeline():
 
                 # Add metadata
                 rec["fetched_at_iso"] = fetched_at_iso
-                
+
                 # Send to Kafka
                 future = producer.send(KAFKA_TOPIC, value=rec)
-                future.get(timeout=10)  # Wait for confirmation
+                future.get(timeout=10)  
                 sent_count += 1
 
                 if (sent_count + failed_count) % 100 == 0:

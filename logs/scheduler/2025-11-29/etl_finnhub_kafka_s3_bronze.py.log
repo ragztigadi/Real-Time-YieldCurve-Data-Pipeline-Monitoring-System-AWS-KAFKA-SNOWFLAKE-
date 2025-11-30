@@ -2843,3 +2843,27 @@ SyntaxError: '(' was never closed
 [2025-11-29T16:33:45.641+0000] {processor.py:840} INFO - DAG(s) 'etl_federalcredit_kafka_s3_bronze' retrieved from /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py
 [2025-11-29T16:33:45.674+0000] {logging_mixin.py:188} INFO - [2025-11-29T16:33:45.674+0000] {dag.py:3089} INFO - Sync 1 DAGs
 [2025-11-29T16:33:45.723+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py took 0.327 seconds
+[2025-11-29T16:34:18.975+0000] {processor.py:161} INFO - Started process (PID=94) to work on /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py
+[2025-11-29T16:34:18.977+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py for tasks to queue
+[2025-11-29T16:34:18.979+0000] {logging_mixin.py:188} INFO - [2025-11-29T16:34:18.978+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py
+[2025-11-29T16:34:19.159+0000] {processor.py:840} INFO - DAG(s) 'etl_federalcredit_kafka_s3_bronze' retrieved from /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py
+[2025-11-29T16:34:19.196+0000] {logging_mixin.py:188} INFO - [2025-11-29T16:34:19.196+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-29T16:34:19.242+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py took 0.273 seconds
+[2025-11-29T16:34:52.548+0000] {processor.py:161} INFO - Started process (PID=95) to work on /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py
+[2025-11-29T16:34:52.549+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py for tasks to queue
+[2025-11-29T16:34:52.552+0000] {logging_mixin.py:188} INFO - [2025-11-29T16:34:52.551+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py
+[2025-11-29T16:34:52.737+0000] {processor.py:840} INFO - DAG(s) 'etl_federalcredit_kafka_s3_bronze' retrieved from /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py
+[2025-11-29T16:34:52.769+0000] {logging_mixin.py:188} INFO - [2025-11-29T16:34:52.769+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-29T16:34:52.814+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py took 0.273 seconds
+[2025-11-29T16:35:25.359+0000] {processor.py:161} INFO - Started process (PID=96) to work on /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py
+[2025-11-29T16:35:25.361+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py for tasks to queue
+[2025-11-29T16:35:25.371+0000] {logging_mixin.py:188} INFO - [2025-11-29T16:35:25.369+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py
+[2025-11-29T16:35:25.672+0000] {processor.py:840} INFO - DAG(s) 'etl_federalcredit_kafka_s3_bronze' retrieved from /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py
+[2025-11-29T16:35:25.707+0000] {logging_mixin.py:188} INFO - [2025-11-29T16:35:25.707+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-29T16:35:25.750+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py took 0.401 seconds
+[2025-11-29T16:35:58.970+0000] {processor.py:161} INFO - Started process (PID=97) to work on /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py
+[2025-11-29T16:35:58.971+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py for tasks to queue
+[2025-11-29T16:35:58.973+0000] {logging_mixin.py:188} INFO - [2025-11-29T16:35:58.973+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py
+[2025-11-29T16:35:59.169+0000] {processor.py:840} INFO - DAG(s) 'etl_federalcredit_kafka_s3_bronze' retrieved from /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py
+[2025-11-29T16:35:59.202+0000] {logging_mixin.py:188} INFO - [2025-11-29T16:35:59.202+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-29T16:35:59.250+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_finnhub_kafka_s3_bronze.py took 0.286 seconds
