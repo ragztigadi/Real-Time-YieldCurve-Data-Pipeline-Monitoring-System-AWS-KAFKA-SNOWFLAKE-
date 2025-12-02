@@ -374,12 +374,6 @@ Real-Time-YieldCurve-Data-Pipeline/
 
 ---
 
-## 🤝 Contributing
-
-Contributions welcome! Please open issues or submit PRs.
-
----
-
 ## 📄 License
 
 MIT License - see LICENSE file for details.
@@ -390,14 +384,5 @@ MIT License - see LICENSE file for details.
 
 **Raghav Tigadi**
 - GitHub: [@ragztigadi](https://github.com/ragztigadi)
-
----
-
-## 🙏 Acknowledgments
-
-- Finnhub for market data API and US Department of Treasury for Yield Data 
-- Apache Foundation for Kafka & Airflow
-- AWS for cloud infrastructure
-- Snowflake for data warehousing
 
 ---
