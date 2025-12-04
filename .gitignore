@@ -15,3 +15,5 @@ __pycache__/
 config/config.conf
 
 .env
+logs
+kafka_data/

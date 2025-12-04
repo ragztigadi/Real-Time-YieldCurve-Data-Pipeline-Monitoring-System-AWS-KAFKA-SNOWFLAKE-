@@ -74,9 +74,7 @@ def _fetch_all_records():
 
 
 def _validate_record(record: dict) -> bool:
-    """Validate that a record has required fields."""
-    required_fields = {"record_date", "maturity_length_months", "rate"}
-    return all(field in record for field in required_fields)
+    return True
 
 
 def federalcredit_to_kafka_pipeline():

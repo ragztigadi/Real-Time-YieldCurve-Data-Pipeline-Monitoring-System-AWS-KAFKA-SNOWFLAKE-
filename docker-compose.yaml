@@ -9,6 +9,9 @@ services:
       - "2181:2181"
     networks:
       - pipeline_network
+    volumes:
+      - ./zk_data:/var/lib/zookeeper/data
+      - ./zk_log:/var/lib/zookeeper/log
 
   kafka:
     image: confluentinc/cp-kafka:7.4.1
@@ -32,8 +35,11 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_LOG_RETENTION_HOURS: 168
       KAFKA_LOG_SEGMENT_BYTES: 1073741824
+      KAFKA_CREATE_TOPICS: "federal-credit-maturity-rates:1:1"
     networks:
       - pipeline_network
+    volumes:
+      - ./kafka_data:/var/lib/kafka/data
 
   kafdrop:
     image: obsidiandynamics/kafdrop:3.3.0
@@ -43,9 +49,7 @@ services:
     ports:
       - "9000:9000"
     environment:
-      # talk to Kafka INSIDE the docker network
       KAFKA_BROKERCONNECT: "kafka:9092"
-      # IMPORTANT: point to the zookeeper *container*, not localhost
       ZOOKEEPER_CONNECT: "zookeeper:2181"
       JVM_OPTS: "-Xms32M -Xmx64M"
       # note the corrected variable name here:
