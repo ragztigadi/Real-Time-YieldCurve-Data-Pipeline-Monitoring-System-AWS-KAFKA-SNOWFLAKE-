@@ -33,3 +33,6 @@ SNOWFLAKE_DATABASE = config.get("snowflake", "database").strip().strip('"').stri
 SNOWFLAKE_SCHEMA = config.get("snowflake", "schema").strip().strip('"').strip("'")
 SNOWFLAKE_ROLE = config.get("snowflake", "role").strip().strip('"').strip("'")
 SNOWFLAKE_TABLE = config.get("snowflake", "table").strip().strip('"').strip("'")
+
+# ---Slak Alert --- 
+SLACK_WEBHOOK_URL = config.get("slack", "webhook_url", fallback="")

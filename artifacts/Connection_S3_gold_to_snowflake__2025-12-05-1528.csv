@@ -1,0 +1,74 @@
+ALERT_ID,ALERT_TYPE,SEVERITY,TITLE,MESSAGE,RECORD_DATE,TENOR,TIMESTAMP,DETAILS,CREATED_AT
+e8fd8e57-1d0f-4cf0-b9ac-1b53a6793bd2,rate_change_anomaly,⚠️ WARNING,Abnormal Rate Change: twenty_years_or_greater,Rate changed 0.74% (from 1.94% to 2.68%) on 2022-09-30,2022-09-30,twenty_years_or_greater,2025-12-05 20:28:01.579,"{
+  ""current_rate"": 2.68,
+  ""interpretation"": ""Potential market shock or data quality issue"",
+  ""previous_rate"": 1.94,
+  ""rate_change_bps"": 74,
+  ""threshold_bps"": 50
+}",2025-12-05 12:28:03.703
+baeac5f4-a594-4ec6-9612-c246565dad23,rate_change_anomaly,⚠️ WARNING,Abnormal Rate Change: between_10_and_20_years,Rate changed 0.97% (from 1.61% to 2.58%) on 2022-09-30,2022-09-30,between_10_and_20_years,2025-12-05 20:28:01.579,"{
+  ""current_rate"": 2.58,
+  ""interpretation"": ""Potential market shock or data quality issue"",
+  ""previous_rate"": 1.61,
+  ""rate_change_bps"": 97,
+  ""threshold_bps"": 50
+}",2025-12-05 12:28:03.182
+89051fb4-2fcc-44cc-8758-c507ff5d48e5,rate_change_anomaly,🚨 CRITICAL,Abnormal Rate Change: between_5_and_10_years,Rate changed 1.30% (from 1.02% to 2.32%) on 2022-09-30,2022-09-30,between_5_and_10_years,2025-12-05 20:28:01.579,"{
+  ""current_rate"": 2.32,
+  ""interpretation"": ""Potential market shock or data quality issue"",
+  ""previous_rate"": 1.02,
+  ""rate_change_bps"": 130,
+  ""threshold_bps"": 50
+}",2025-12-05 12:28:02.643
+2422721d-6031-4191-a365-d86fa4a7efaa,rate_change_anomaly,🚨 CRITICAL,Abnormal Rate Change: between_1_and_5_years,Rate changed 1.75% (from 0.32% to 2.07%) on 2022-09-30,2022-09-30,between_1_and_5_years,2025-12-05 20:28:01.579,"{
+  ""current_rate"": 2.07,
+  ""interpretation"": ""Potential market shock or data quality issue"",
+  ""previous_rate"": 0.32,
+  ""rate_change_bps"": 175,
+  ""threshold_bps"": 50
+}",2025-12-05 12:28:02.027
+2585b1f4-2d8c-45dc-9918-a87836aa2dc2,rate_change_anomaly,🚨 CRITICAL,Abnormal Rate Change: one_year_or_less,Rate changed 1.20% (from 0.07% to 1.27%) on 2022-09-30,2022-09-30,one_year_or_less,2025-12-05 20:28:01.579,"{
+  ""current_rate"": 1.27,
+  ""interpretation"": ""Potential market shock or data quality issue"",
+  ""previous_rate"": 0.07,
+  ""rate_change_bps"": 120,
+  ""threshold_bps"": 50
+}",2025-12-05 12:28:01.593
+2fb88405-d763-491f-b2ff-2fe09160b51d,rate_change_anomaly,⚠️ WARNING,Abnormal Rate Change: twenty_years_or_greater,Rate changed 0.53% (from 4.03% to 4.56%) on 2024-09-30,2024-09-30,twenty_years_or_greater,2025-12-05 20:27:30.407,"{
+  ""current_rate"": 4.56,
+  ""interpretation"": ""Potential market shock or data quality issue"",
+  ""previous_rate"": 4.03,
+  ""rate_change_bps"": 53,
+  ""threshold_bps"": 50
+}",2025-12-05 12:27:32.358
+1acd93ac-b470-4ee1-aada-9583010add4a,rate_change_anomaly,⚠️ WARNING,Abnormal Rate Change: between_10_and_20_years,Rate changed 0.51% (from 3.99% to 4.50%) on 2024-09-30,2024-09-30,between_10_and_20_years,2025-12-05 20:27:30.407,"{
+  ""current_rate"": 4.5,
+  ""interpretation"": ""Potential market shock or data quality issue"",
+  ""previous_rate"": 3.99,
+  ""rate_change_bps"": 51,
+  ""threshold_bps"": 50
+}",2025-12-05 12:27:31.881
+6a1d5337-cda1-4b93-b2bb-d2ed8fd18167,zscore_anomaly,⚠️ WARNING,Z-Score Anomaly Detected: between_5_and_10_years,Rate 3.54% is 3.46 std devs from mean on 2003-09-30,2003-09-30,between_5_and_10_years,2025-12-05 20:27:04.833,"{
+  ""interpretation"": ""Rate is 3.5σ from historical average"",
+  ""mean"": 6.025,
+  ""rate"": 3.54,
+  ""std_dev"": 0.718,
+  ""threshold"": 3,
+  ""zscore"": 3.463
+}",2025-12-05 12:27:06.860
+ea97cef3-aab0-4106-97ec-cfe2a1fc3751,zscore_anomaly,⚠️ WARNING,Z-Score Anomaly Detected: between_1_and_5_years,Rate 2.09% is 3.65 std devs from mean on 2003-09-30,2003-09-30,between_1_and_5_years,2025-12-05 20:27:04.833,"{
+  ""interpretation"": ""Rate is 3.7σ from historical average"",
+  ""mean"": 5.416,
+  ""rate"": 2.09,
+  ""std_dev"": 0.911,
+  ""threshold"": 3,
+  ""zscore"": 3.651
+}",2025-12-05 12:27:06.415
+436726f4-f872-4b3d-afd2-5ecbd1f71fa2,zscore_anomaly,⚠️ WARNING,Z-Score Anomaly Detected: between_1_and_5_years,Rate 3.37% is 3.35 std devs from mean on 2002-09-30,2002-09-30,between_1_and_5_years,2025-12-05 20:27:04.832,"{
+  ""interpretation"": ""Rate is 3.3σ from historical average"",
+  ""mean"": 5.621,
+  ""rate"": 3.37,
+  ""std_dev"": 0.673,
+  ""threshold"": 3,
+  ""zscore"": 3.346
+}",2025-12-05 12:27:05.957

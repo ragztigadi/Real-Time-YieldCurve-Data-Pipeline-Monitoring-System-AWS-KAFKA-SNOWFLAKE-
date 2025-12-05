@@ -1,6 +1,6 @@
 """
-Kafka to Snowpipe Streaming Pipeline with Financial Validations
-Real-time row-level ingestion into Snowflake with production-grade financial validation
+Kafka to Snowpipe Streaming Pipeline with Financial Validations and ML Anomaly Detection
+Real-time row-level ingestion into Snowflake with production-grade validation
 """
 import json
 import logging
@@ -25,6 +25,7 @@ from config.config_loader import (
     SNOWFLAKE_TABLE,
 )
 from utils.financial_validator import FinancialValidator, FinancialAlert, format_financial_alert_for_slack
+from utils.ml_anomaly_detector import StatisticalAnomalyDetector, MLAlert, format_ml_alert_for_slack
 from utils.alert_manager import AlertManager
 
 logger = logging.getLogger(__name__)
@@ -33,7 +34,7 @@ logging.basicConfig(level=logging.INFO)
 
 class SnowpipeStreamingClient:
     """
-    Snowpipe Streaming client with financial validation
+    Snowpipe Streaming client with financial validation and ML anomaly detection
     """
     
     def __init__(self):
@@ -207,6 +208,47 @@ class SnowpipeStreamingClient:
             self.conn.rollback()
             return 0
     
+    def insert_ml_alerts(self, alerts: List[MLAlert]) -> int:
+        """
+        Insert ML anomaly alerts into Snowflake
+        """
+        if not alerts:
+            return 0
+        
+        try:
+            # Insert alerts one by one
+            inserted_count = 0
+            for alert in alerts:
+                alert_id = str(uuid.uuid4())
+                
+                insert_query = f"""
+                INSERT INTO {SNOWFLAKE_SCHEMA}.ML_ANOMALY_ALERTS 
+                (alert_id, alert_type, severity, title, message, record_date, tenor, timestamp, details)
+                SELECT %s, %s, %s, %s, %s, %s, %s, %s, PARSE_JSON(%s)
+                """
+                
+                self.cursor.execute(insert_query, (
+                    alert_id,
+                    alert.alert_type.value,
+                    alert.severity.value,
+                    alert.title,
+                    alert.message,
+                    alert.record_date,
+                    alert.tenor,
+                    alert.timestamp,
+                    json.dumps(alert.details)
+                ))
+                inserted_count += 1
+            
+            self.conn.commit()
+            logger.info(f"✓ Inserted {inserted_count} ML alerts into Snowflake")
+            return inserted_count
+            
+        except Exception as e:
+            logger.error(f"ML alert insert failed: {e}")
+            self.conn.rollback()
+            return 0
+    
     def close(self):
         """Close Snowflake connection"""
         try:
@@ -223,20 +265,23 @@ def kafka_to_snowpipe_streaming_pipeline(
     batch_size: int = 100, 
     timeout_ms: int = 5000,
     enable_financial_validation: bool = True,
+    enable_ml_detection: bool = True,
     slack_webhook_url: str = None
 ):
     """
-    Stream messages from Kafka to Snowflake with financial validation
+    Stream messages from Kafka to Snowflake with financial validation and ML anomaly detection
     
     Args:
         batch_size: Number of records to batch before inserting
         timeout_ms: Kafka consumer timeout in milliseconds
         enable_financial_validation: Run financial validations
-        slack_webhook_url: Slack webhook for financial alerts
+        enable_ml_detection: Run ML anomaly detection
+        slack_webhook_url: Slack webhook for alerts
     """
     consumer = None
     snowflake_client = None
     financial_validator = None
+    ml_detector = None
     alert_manager = None
     
     try:
@@ -253,6 +298,12 @@ def kafka_to_snowpipe_streaming_pipeline(
             if slack_webhook_url:
                 alert_manager = AlertManager(slack_webhook_url=slack_webhook_url)
                 logger.info("✓ Slack notifications enabled for financial alerts")
+        
+        # Initialize ML anomaly detector
+        if enable_ml_detection:
+            logger.info("Initializing ML anomaly detector...")
+            ml_detector = StatisticalAnomalyDetector(window_size=100)
+            logger.info("✓ ML anomaly detection enabled")
         
         # Initialize Kafka consumer
         logger.info(f"Connecting to Kafka at {KAFKA_BOOTSTRAP}")
@@ -271,7 +322,8 @@ def kafka_to_snowpipe_streaming_pipeline(
         batch = []
         raw_batch = []  # Keep raw records for validation
         total_streamed = 0
-        total_alerts = 0
+        total_financial_alerts = 0
+        total_ml_alerts = 0
         
         for message in consumer:
             try:
@@ -301,30 +353,57 @@ def kafka_to_snowpipe_streaming_pipeline(
                         if financial_alerts:
                             # Store alerts in Snowflake
                             alert_count = snowflake_client.insert_validation_alerts(financial_alerts)
-                            total_alerts += alert_count
+                            total_financial_alerts += alert_count
                             
                             # Send critical alerts to Slack
                             if alert_manager:
                                 for alert in financial_alerts:
-                                    slack_msg = format_financial_alert_for_slack(alert)
-                                    alert_manager.send_slack_notification_raw(slack_msg)
+                                    if "CRITICAL" in alert.severity.value:
+                                        slack_msg = format_financial_alert_for_slack(alert)
+                                        alert_manager.send_slack_notification_raw(slack_msg)
                             
                             # Log summary
                             critical = sum(1 for a in financial_alerts if "CRITICAL" in a.severity.value)
                             warning = sum(1 for a in financial_alerts if "WARNING" in a.severity.value)
                             logger.warning(
-                                f"⚠️ Financial validation generated {critical} critical "
-                                f"and {warning} warning alerts"
+                                f"⚠️ Financial validation: {critical} critical, {warning} warning"
                             )
                         else:
                             logger.info("✓ All financial validations passed")
+                    
+                    # Run ML anomaly detection
+                    if enable_ml_detection and ml_detector:
+                        logger.info("Running ML anomaly detection...")
+                        ml_alerts = ml_detector.detect_anomalies(raw_batch)
+                        
+                        if ml_alerts:
+                            # Store ML alerts in Snowflake
+                            ml_alert_count = snowflake_client.insert_ml_alerts(ml_alerts)
+                            total_ml_alerts += ml_alert_count
+                            
+                            # Send critical ML alerts to Slack
+                            if alert_manager:
+                                for alert in ml_alerts:
+                                    if "CRITICAL" in alert.severity.value:
+                                        slack_msg = format_ml_alert_for_slack(alert)
+                                        alert_manager.send_slack_notification_raw(slack_msg)
+                            
+                            # Log summary
+                            critical_ml = sum(1 for a in ml_alerts if "CRITICAL" in a.severity.value)
+                            warning_ml = sum(1 for a in ml_alerts if "WARNING" in a.severity.value)
+                            logger.warning(
+                                f"🤖 ML detection: {critical_ml} critical, {warning_ml} warning"
+                            )
+                        else:
+                            logger.info("✓ No ML anomalies detected")
                     
                     # Commit Kafka offsets after successful processing
                     consumer.commit()
                     
                     logger.info(
-                        f"Progress: {total_streamed} records streamed, "
-                        f"{total_alerts} financial alerts generated"
+                        f"Progress: {total_streamed} records | "
+                        f"{total_financial_alerts} financial alerts | "
+                        f"{total_ml_alerts} ML alerts"
                     )
                     
                     # Reset batches
@@ -345,13 +424,21 @@ def kafka_to_snowpipe_streaming_pipeline(
                 financial_alerts = financial_validator.validate_batch(raw_batch)
                 if financial_alerts:
                     alert_count = snowflake_client.insert_validation_alerts(financial_alerts)
-                    total_alerts += alert_count
+                    total_financial_alerts += alert_count
+            
+            # ML detection on remaining records
+            if enable_ml_detection and ml_detector and raw_batch:
+                ml_alerts = ml_detector.detect_anomalies(raw_batch)
+                if ml_alerts:
+                    ml_alert_count = snowflake_client.insert_ml_alerts(ml_alerts)
+                    total_ml_alerts += ml_alert_count
             
             consumer.commit()
         
         logger.info(
-            f"✓ Pipeline completed: {total_streamed} records streamed, "
-            f"{total_alerts} financial alerts generated"
+            f"✓ Pipeline completed: {total_streamed} records | "
+            f"{total_financial_alerts} financial alerts | "
+            f"{total_ml_alerts} ML alerts"
         )
         
     except KafkaError as e:
@@ -375,5 +462,6 @@ if __name__ == "__main__":
     
     kafka_to_snowpipe_streaming_pipeline(
         enable_financial_validation=True,
+        enable_ml_detection=True,
         slack_webhook_url=SLACK_WEBHOOK
     )
