@@ -19,9 +19,9 @@ logging.basicConfig(level=logging.INFO)
 
 class AlertSeverity(Enum):
     """Alert severity levels"""
-    INFO = "ℹ️ INFO"
-    WARNING = "⚠️ WARNING"
-    CRITICAL = "🚨 CRITICAL"
+    INFO = "INFO"
+    WARNING = "WARNING"
+    CRITICAL = "CRITICAL"
 
 
 class AlertType(Enum):
@@ -423,3 +423,31 @@ Details:
         """
         for alert in alerts:
             self.notify(alert)
+
+def send_slack_notification_raw(self, slack_message: Dict) -> bool:
+    """
+    Send raw Slack message (already formatted)
+    
+    Args:
+        slack_message: Pre-formatted Slack message dict
+        
+    Returns:
+        True if successful, False otherwise
+    """
+    if not self.slack_webhook_url:
+        logger.warning("Slack webhook URL not configured")
+        return False
+    
+    try:
+        response = requests.post(
+            self.slack_webhook_url,
+            json=slack_message,
+            timeout=10
+        )
+        response.raise_for_status()
+        logger.info("Slack notification sent")
+        return True
+        
+    except Exception as e:
+        logger.error(f"Failed to send Slack notification: {e}")
+        return False
