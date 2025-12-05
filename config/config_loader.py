@@ -18,7 +18,18 @@ S3_BRONZE_BUCKET = config["AWS"]["S3_BRONZE_BUCKET"].strip()
 
 # --- KAFKA ---
 # Use environment variable from docker-compose if available, else fall back to config
-KAFKA_BOOTSTRAP = os.getenv("KAFKA_BOOTSTRAP", config["KAFKA"]["BOOTSTRAP"].strip())
+KAFKA_BOOTSTRAP = os.getenv("KAFKA_BOOTSTRAP", config.get("KAFKA", "bootstrap_servers").strip())
 KAFKA_TOPIC = config["KAFKA"]["TOPIC"].strip()
 KAFKA_GROUP_ID = config["KAFKA"]["GROUP_ID"].strip()
 FETCH_INTERVAL_SEC = int(config["KAFKA"]["FETCH_INTERVAL_SEC"])
+
+# --- SNOWFLAKE -----
+# Snowflake Configuration
+SNOWFLAKE_ACCOUNT = config.get("snowflake", "account").strip().strip('"').strip("'")
+SNOWFLAKE_USER = config.get("snowflake", "user").strip().strip('"').strip("'")
+SNOWFLAKE_PASSWORD = config.get("snowflake", "password").strip().strip('"').strip("'")
+SNOWFLAKE_WAREHOUSE = config.get("snowflake", "warehouse").strip().strip('"').strip("'")
+SNOWFLAKE_DATABASE = config.get("snowflake", "database").strip().strip('"').strip("'")
+SNOWFLAKE_SCHEMA = config.get("snowflake", "schema").strip().strip('"').strip("'")
+SNOWFLAKE_ROLE = config.get("snowflake", "role").strip().strip('"').strip("'")
+SNOWFLAKE_TABLE = config.get("snowflake", "table").strip().strip('"').strip("'")

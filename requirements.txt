@@ -4,3 +4,5 @@ snowflake-connector-python>=3.10.0
 dbt-core
 dbt-snowflake
 requests
+snowflake-connector-python
+snowflake-ingest

@@ -54,7 +54,6 @@ def _validate_schema(batch: list) -> bool:
     logger.info(f"Schema validation passed. Columns: {actual_columns}")
     return True
 
-
 def _check_file_exists(s3_client, bucket: str, key: str) -> bool:
     """Check if a file already exists in S3."""
     try:
