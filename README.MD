@@ -169,7 +169,7 @@ Table `yield_curve_stream` with 238 records (1992-2025), showing real-time inges
 ---
 
 #### Financial Validation Alerts
-![Financial Alerts Summary](image-15-financial-alerts.png)
+![alt text](<14 successfully able to generate the alerts into the snowflake (2).png>)
 
 Alert summary showing:
 - 64 Butterfly Arbitrage (CRITICAL)
@@ -179,21 +179,20 @@ Alert summary showing:
 ---
 
 #### Butterfly Arbitrage Detection
-![Butterfly Alert Details](image-16-butterfly-alert.png)
+![alt text](<14 successfully able to generate the alerts into the snowflake.png>)
 
 Detailed butterfly arbitrage alerts with record dates and action requirements
 
 ---
 
 #### Combined Alert Dashboard
-![Alert Summary](image-17-alert-summary.png)
 
 Unified view of all financial validation alerts by type and severity
 
 ---
 
 #### Real-time Slack Notifications
-![Enhanced Slack Alerts](image-18-slack-alerts.png)
+![alt text](<15 slack alerts implemented.png>)
 
 Slack receiving real-time alerts: Missing Tenors, Null Rate Values, Duplicate Records
 
@@ -305,22 +304,36 @@ python3 -m pipelines.kafka_snowpipe_streaming
 ## Project Structure
 
 ```
-Real-Time-YieldCurve-Data-Pipeline/
-├── config/                    # Configuration files
-├── dags/                      # Airflow DAGs
-├── pipelines/                 # ETL pipelines
+## Project Structure
+```
+Real-Time-YieldCurve-Data-Pipeline-Monitoring-System/
+├── artifacts/
+├── config/
+│   ├── __init__.py
+│   ├── config_loader.py
+│   └── config.conf
+├── dags/
+│   └── etl_finnhub_kafka_s3_bronze.py
+├── logs/
+├── pipelines/
+│   ├── __init__.py
 │   ├── federalcredit_kafka_pipeline.py
 │   ├── kafka_s3_pipeline.py
 │   └── kafka_snowpipe_streaming.py
-├── utils/                     # Utilities
+├── plugins/
+├── utils/
+│   ├── __init__.py
 │   ├── alert_manager.py
+│   ├── constants.py
 │   ├── financial_validator.py
 │   └── ml_anomaly_detector.py
+├── venv/
+├── .env
+├── .gitignore
 ├── docker-compose.yaml
-├── requirements.txt
-└── README.md
+├── README.md
+└── requirements.txt
 ```
-
 ---
 
 ## Author

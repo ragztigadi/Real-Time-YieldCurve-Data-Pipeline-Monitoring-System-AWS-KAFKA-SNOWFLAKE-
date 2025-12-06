@@ -95,7 +95,7 @@ class StatisticalAnomalyDetector:
         # Previous batch for rate-of-change calculation
         self.previous_batch: Optional[List[Dict]] = None
         
-        logger.info(f"✓ Statistical anomaly detector initialized (window_size={window_size})")
+        logger.info(f" Statistical anomaly detector initialized (window_size={window_size})")
     
     def _safe_float(self, value) -> Optional[float]:
         """Safely convert value to float"""
@@ -143,10 +143,8 @@ class StatisticalAnomalyDetector:
         
         volatility = np.std(returns)
         return volatility
-    
-    # ========================================================================
+
     # ANOMALY DETECTION RULE 1: Z-Score Detection
-    # ========================================================================
     
     def detect_zscore_anomalies(self, record: Dict) -> List[MLAlert]:
         """
@@ -199,10 +197,7 @@ class StatisticalAnomalyDetector:
             self.rolling_windows[tenor].append(rate)
         
         return alerts
-    
-    # ========================================================================
     # ANOMALY DETECTION RULE 2: Volatility Spike Detection
-    # ========================================================================
     
     def detect_volatility_spikes(self, batch: List[Dict]) -> List[MLAlert]:
         """
@@ -255,11 +250,8 @@ class StatisticalAnomalyDetector:
                 alerts.append(alert)
         
         return alerts
-    
-    # ========================================================================
     # ANOMALY DETECTION RULE 3: Rate-of-Change Detection
-    # ========================================================================
-    
+
     def detect_rate_changes(self, current_batch: List[Dict]) -> List[MLAlert]:
         """
         Detect abnormal rate-of-change between batches
@@ -313,9 +305,7 @@ class StatisticalAnomalyDetector:
         self.previous_batch = current_batch
         return alerts
     
-    # ========================================================================
     # ANOMALY DETECTION RULE 4: Extreme Value Detection
-    # ========================================================================
     
     def detect_extreme_values(self, record: Dict) -> List[MLAlert]:
         """
@@ -351,9 +341,7 @@ class StatisticalAnomalyDetector:
         
         return alerts
     
-    # ========================================================================
     # MASTER DETECTION FUNCTION
-    # ========================================================================
     
     def detect_anomalies(self, batch: List[Dict]) -> List[MLAlert]:
         """
@@ -381,11 +369,11 @@ class StatisticalAnomalyDetector:
                 critical_count = sum(1 for a in all_alerts if a.severity == MLAlertSeverity.CRITICAL)
                 warning_count = sum(1 for a in all_alerts if a.severity == MLAlertSeverity.WARNING)
                 logger.warning(
-                    f"🤖 ML anomaly detection: {critical_count} critical, "
+                    f" ML anomaly detection: {critical_count} critical, "
                     f"{warning_count} warning alerts"
                 )
             else:
-                logger.info("✓ No ML anomalies detected")
+                logger.info(" No ML anomalies detected")
         
         except Exception as e:
             logger.error(f"ML anomaly detection failed: {e}")
@@ -401,7 +389,7 @@ class DeepMLAnalyzer:
     
     def __init__(self):
         """Initialize deep ML analyzer"""
-        logger.info("✓ Deep ML analyzer initialized (placeholder for Snowflake UDFs)")
+        logger.info("Deep ML analyzer initialized (placeholder for Snowflake UDFs)")
     
     def analyze_with_isolation_forest(self, records: List[Dict]) -> List[MLAlert]:
         """
@@ -415,7 +403,7 @@ class DeepMLAnalyzer:
         # Placeholder: In production, this would call Snowflake external function
         # that runs Isolation Forest on the data
         
-        logger.info("🔬 Deep ML: Isolation Forest analysis (placeholder)")
+        logger.info(" Deep ML: Isolation Forest analysis (placeholder)")
         
         return alerts
     
@@ -434,11 +422,8 @@ class DeepMLAnalyzer:
             "confidence_intervals": {},
             "model_version": "v1.0"
         }
-
-
-# ============================================================================
+    
 # HELPER FUNCTIONS
-# ============================================================================
 
 def format_ml_alert_for_slack(alert: MLAlert) -> Dict:
     """Format ML alert for Slack notification"""
@@ -452,7 +437,7 @@ def format_ml_alert_for_slack(alert: MLAlert) -> Dict:
         "attachments": [
             {
                 "color": color_map.get(alert.severity, "#cccccc"),
-                "title": f"🤖 {alert.severity.value} {alert.title}",
+                "title": f" {alert.severity.value} {alert.title}",
                 "text": alert.message,
                 "fields": [
                     {

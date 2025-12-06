@@ -97,10 +97,8 @@ class FinancialValidator:
             tenor: self._safe_float(record.get(tenor))
             for tenor in self.EXPECTED_TENORS
         }
-    
-    # ========================================================================
+
     # VALIDATION RULE 1: Yield Curve Monotonicity
-    # ========================================================================
     
     def validate_monotonicity(self, record: Dict) -> List[FinancialAlert]:
         """
@@ -152,9 +150,7 @@ class FinancialValidator:
         
         return alerts
     
-    # ========================================================================
     # VALIDATION RULE 2: Butterfly Spread Arbitrage Detection
-    # ========================================================================
     
     def validate_butterfly_spread(self, record: Dict) -> List[FinancialAlert]:
         """
@@ -225,10 +221,8 @@ class FinancialValidator:
         
         return alerts
     
-    # ========================================================================
     # VALIDATION RULE 3: Tenor Completeness
-    # ========================================================================
-    
+   
     def validate_tenor_completeness(self, record: Dict) -> List[FinancialAlert]:
         """
         Validate that all expected tenors are present and non-null
@@ -258,10 +252,7 @@ class FinancialValidator:
         
         return alerts
     
-    # ========================================================================
     # VALIDATION RULE 4: Forward Rate Consistency
-    # ========================================================================
-    
     def validate_forward_rates(self, record: Dict) -> List[FinancialAlert]:
         """
         Validate implied forward rates are positive
@@ -322,10 +313,8 @@ class FinancialValidator:
             alerts.append(alert)
         
         return alerts
-    
-    # ========================================================================
+
     # VALIDATION RULE 5: Liquidity Premium Validation
-    # ========================================================================
     
     def validate_liquidity_premium(self, record: Dict) -> List[FinancialAlert]:
         """
@@ -386,11 +375,9 @@ class FinancialValidator:
             alerts.append(alert)
         
         return alerts
-    
-    # ========================================================================
+
     # MASTER VALIDATION FUNCTION
-    # ========================================================================
-    
+ 
     def validate_record(self, record: Dict) -> List[FinancialAlert]:
         """
         Run all financial validation rules on a single record
@@ -458,10 +445,7 @@ class FinancialValidator:
         
         return all_alerts
 
-
-# ============================================================================
 # HELPER FUNCTIONS
-# ============================================================================
 
 def format_financial_alert_for_slack(alert: FinancialAlert) -> Dict:
     """Format financial alert for Slack notification"""

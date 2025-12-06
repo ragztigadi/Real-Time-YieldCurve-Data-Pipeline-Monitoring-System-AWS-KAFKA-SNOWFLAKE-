@@ -79,7 +79,7 @@ class SnowpipeStreamingClient:
                 logger.error(f"Table {SNOWFLAKE_SCHEMA}.{SNOWFLAKE_TABLE} does not exist!")
                 raise Exception("Target table not found. Please create it first.")
             
-            logger.info(f"✓ Target table {SNOWFLAKE_SCHEMA}.{SNOWFLAKE_TABLE} verified")
+            logger.info(f"Target table {SNOWFLAKE_SCHEMA}.{SNOWFLAKE_TABLE} verified")
             
             # Verify alerts table
             query = f"""
@@ -94,7 +94,7 @@ class SnowpipeStreamingClient:
             if result[0] == 0:
                 logger.warning("Financial validation alerts table not found - alerts won't be persisted")
             else:
-                logger.info("✓ Financial validation alerts table verified")
+                logger.info("Financial validation alerts table verified")
             
         except Exception as e:
             logger.error(f"Table verification failed: {e}")
@@ -159,7 +159,7 @@ class SnowpipeStreamingClient:
             self.conn.commit()
             
             inserted_count = len(records)
-            logger.info(f"✓ Inserted {inserted_count} records into Snowflake")
+            logger.info(f"Inserted {inserted_count} records into Snowflake")
             
             return inserted_count
             
@@ -200,7 +200,7 @@ class SnowpipeStreamingClient:
                 inserted_count += 1
             
             self.conn.commit()
-            logger.info(f"✓ Inserted {inserted_count} validation alerts into Snowflake")
+            logger.info(f"Inserted {inserted_count} validation alerts into Snowflake")
             return inserted_count
             
         except Exception as e:
@@ -241,7 +241,7 @@ class SnowpipeStreamingClient:
                 inserted_count += 1
             
             self.conn.commit()
-            logger.info(f"✓ Inserted {inserted_count} ML alerts into Snowflake")
+            logger.info(f"Inserted {inserted_count} ML alerts into Snowflake")
             return inserted_count
             
         except Exception as e:
@@ -297,13 +297,13 @@ def kafka_to_snowpipe_streaming_pipeline(
             # Initialize alert manager for Slack notifications
             if slack_webhook_url:
                 alert_manager = AlertManager(slack_webhook_url=slack_webhook_url)
-                logger.info("✓ Slack notifications enabled for financial alerts")
+                logger.info("Slack notifications enabled for financial alerts")
         
         # Initialize ML anomaly detector
         if enable_ml_detection:
             logger.info("Initializing ML anomaly detector...")
             ml_detector = StatisticalAnomalyDetector(window_size=100)
-            logger.info("✓ ML anomaly detection enabled")
+            logger.info("ML anomaly detection enabled")
         
         # Initialize Kafka consumer
         logger.info(f"Connecting to Kafka at {KAFKA_BOOTSTRAP}")
@@ -316,7 +316,7 @@ def kafka_to_snowpipe_streaming_pipeline(
             value_deserializer=lambda v: json.loads(v.decode("utf-8")),
             group_id=KAFKA_GROUP_ID,
         )
-        logger.info("✓ Successfully connected to Kafka consumer")
+        logger.info("Successfully connected to Kafka consumer")
         
         # Process messages in batches
         batch = []
@@ -369,7 +369,7 @@ def kafka_to_snowpipe_streaming_pipeline(
                                 f"⚠️ Financial validation: {critical} critical, {warning} warning"
                             )
                         else:
-                            logger.info("✓ All financial validations passed")
+                            logger.info("All financial validations passed")
                     
                     # Run ML anomaly detection
                     if enable_ml_detection and ml_detector:
@@ -392,10 +392,10 @@ def kafka_to_snowpipe_streaming_pipeline(
                             critical_ml = sum(1 for a in ml_alerts if "CRITICAL" in a.severity.value)
                             warning_ml = sum(1 for a in ml_alerts if "WARNING" in a.severity.value)
                             logger.warning(
-                                f"🤖 ML detection: {critical_ml} critical, {warning_ml} warning"
+                                f" ML detection: {critical_ml} critical, {warning_ml} warning"
                             )
                         else:
-                            logger.info("✓ No ML anomalies detected")
+                            logger.info(" No ML anomalies detected")
                     
                     # Commit Kafka offsets after successful processing
                     consumer.commit()
@@ -436,7 +436,7 @@ def kafka_to_snowpipe_streaming_pipeline(
             consumer.commit()
         
         logger.info(
-            f"✓ Pipeline completed: {total_streamed} records | "
+            f"Pipeline completed: {total_streamed} records | "
             f"{total_financial_alerts} financial alerts | "
             f"{total_ml_alerts} ML alerts"
         )
