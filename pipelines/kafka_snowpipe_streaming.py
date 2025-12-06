@@ -53,7 +53,7 @@ class SnowpipeStreamingClient:
             )
             
             self.cursor = self.conn.cursor()
-            logger.info("✓ Successfully connected to Snowflake")
+            logger.info("Successfully connected to Snowflake")
             
             # Verify tables exist
             self._verify_tables()
