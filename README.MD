@@ -305,7 +305,7 @@ python3 -m pipelines.kafka_snowpipe_streaming
 
 ```
 ## Project Structure
-```
+
 Real-Time-YieldCurve-Data-Pipeline-Monitoring-System/
 ├── artifacts/
 ├── config/
@@ -334,8 +334,6 @@ Real-Time-YieldCurve-Data-Pipeline-Monitoring-System/
 ├── README.md
 └── requirements.txt
 ```
----
-
 ## Author
 
 **Raghav Tigadi**
@@ -349,3 +347,4 @@ Real-Time-YieldCurve-Data-Pipeline-Monitoring-System/
 MIT License - see [LICENSE](LICENSE) file for details
 
 ---
+
